@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import lockout from "@/public/images/lockout.png"
 import qwikaid from "@/public/images/qwikaid.png"
+import lockout from "@/public/images/lockout.png"
 import dns from "@/public/images/dns.png"
 import insted from "@/public/images/insted.png"
 import github from "@/public/images/github.png"
@@ -49,7 +49,7 @@ function Projects() {
         },
         {
             title: "DNS Server",
-            subtitle: "High-Performance UDP-Based DNS Resolver",
+            subtitle: "High-Performance UDP-Based DNS Server",
             image: dns,
             features: [
                 "<b>Full Protocol Implementation:</b> Raw UDP parsing and construction (RFC 1035 compliant).",

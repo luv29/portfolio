@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import hero from "@/public/images/hero.png";
-import heroDot from "@/public/images/hero-dots.png";
-import heroBox from "@/public/images/hero-box.png";
+import hero from "@/public/images/image.png";
 import iv from "@/public/images/inverted-comma.png";
 
 function HeroSection() {
@@ -13,23 +11,27 @@ function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-[80vw] h-[80vh] flex flex-col justify-center items-center gap-[100px]"
+            className="w-[90vw] max-w-[1200px] mx-auto min-h-screen md:min-h-[80vh] flex flex-col justify-center items-center gap-16 px-4"
         >
-            <div className="flex items-center justify-center gap-8">
+            <div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12">
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
-                    className="flex-3 space-y-4"
+                    className="md:flex-3/5 space-y-5"
                 >
                     <p className="text-[#C778DD] text-lg"> Meet </p>
-                    <h1 className="text-5xl font-bold"> Luv Kansal </h1>
-                    <div className="h-5"></div>
-                    <div className="text-[#ABB2BF] text-md">
-                        He is a third-year student at IIIT Pune. With a sharp focus on backend systems, he excels at building scalable and robust applications. He’s highly skilled in AWS, Gen AI, and Agentic AI, and has a strong track record in competitive programming. Passionate about innovation, Luv is continuously pushing boundaries and making waves in the tech world.
-                    </div>
-                    <p className="text-[#AB22BF] text-md text-right"> ~ChatGPT </p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-white"> Luv Kansal </h1>
+
+                    <p className="text-[#ABB2BF] text-sm md:text-base leading-relaxed">
+                        He is a third-year student at IIIT Pune. With a sharp focus on backend systems,
+                        he excels at building scalable and robust applications. He’s highly skilled in AWS,
+                        Gen AI, and Agentic AI, and has a strong track record in competitive programming.
+                        Passionate about innovation, Luv is continuously pushing boundaries and making waves in the tech world.
+                    </p>
                     
+                    <p className="text-[#AB22BF] text-right text-sm"> ~ChatGPT </p>
+
                     <a
                         href="https://drive.google.com/file/d/1COJeSfpw6erzNGL2JEaQfMHVtL8Hxvaa/view?usp=sharing"
                         target="_blank"
@@ -38,58 +40,45 @@ function HeroSection() {
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-transparent border-white border-2 w-[148px] h-[37px] flex items-center justify-center hover:bg-neutral-700 cursor-pointer transition-colors duration-300"
+                            className="bg-transparent border-[#ABB2BF] border w-fit px-6 py-2 text-sm hover:bg-neutral-400 transition-colors duration-300 cursor-pointer rounded-sm"
                         >
                             View Resume
                         </motion.div>
                     </a>
                 </motion.div>
 
+                {/* Image Section */}
                 <motion.div
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="flex-2 flex justify-center relative"
+                    className=" flex justify-center"
                 >
                     <Image
                         src={hero}
                         alt="Hero Image"
-                        width={457}
-                        height={386}
-                        className="z-10"
+                        width={400}
+                        height={350}
+                        className="z-10 max-w-full h-auto"
+                        priority
                     />
-                    <motion.div
-                        initial={{ rotate: 0 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.6, duration: 0.6 }}
-                        className="absolute top-[67%] left-[77%] z-20"
-                    >
-                        <Image src={heroDot} alt="dots" width={84} height={84} />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.6, duration: 0.6 }}
-                        className="absolute top-[20%] left-0"
-                    >
-                        <Image src={heroBox} alt="box" width={155} height={155} />
-                    </motion.div>
                 </motion.div>
             </div>
 
+            {/* Quote */}
             <motion.div
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.6 }}
-                className="bg-transparent border-[#ABB2BF] border-2 w-[712px] h-[95px] flex items-center justify-center text-3xl relative"
+                className="relative border-2 border-[#ABB2BF] w-full max-w-[700px] p-5 md:p-6 text-xl md:text-2xl text-white text-center"
             >
                 Turning Challenges into Triumphs
                 <Image
                     src={iv}
-                    alt=","
+                    alt="quote"
                     width={30}
                     height={24}
-                    className="absolute top-[-12%] left-[3%] z-10 bg-[#282C33]"
+                    className="absolute top-[-15px] left-4 bg-[#282C33] p-1"
                 />
             </motion.div>
         </motion.div>
