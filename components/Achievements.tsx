@@ -241,7 +241,7 @@ function Achievements() {
                 >
                     {[
                         { label: "Contest Ranks", value: "Top 5%" },
-                        { label: "Global Rating", value: "2K+" },
+                        { label: "Global Rating", value: "2000+" },
                         { label: "Competitions", value: "8+" },
                         { label: "JEE Percentile", value: "98.6%" }
                     ].map((stat, index) => (

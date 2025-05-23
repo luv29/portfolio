@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Link } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const projects = [
     {
@@ -49,6 +50,7 @@ const cardVariants = {
 };
 
 const ProjectCard = ({ project }) => {
+    const router = useRouter();
     const { image, title, tech, description, category, featured } = project;
 
     return (
@@ -117,7 +119,7 @@ const ProjectCard = ({ project }) => {
 
                 {/* Only View Project Button */}
                 <div>
-                    <button className="flex items-center gap-2 px-6 py-3 bg-[#C778DD] text-black font-medium rounded-xl hover:bg-[#C778DD]/90 hover:scale-105 transition-all duration-300 group/btn">
+                    <button className="flex items-center gap-2 px-6 py-3 bg-[#C778DD] text-black font-medium rounded-xl hover:bg-[#C778DD]/90 hover:scale-105 transition-all duration-300 group/btn" onClick={() => router.push('/projects')}>
                         <span>View Project</span>
                         <ArrowUpRight className="w-4 h-4 group-hover/btn:rotate-45 transition-transform duration-300" />
                     </button>
@@ -128,6 +130,8 @@ const ProjectCard = ({ project }) => {
 };
 
 export default function Projects() {
+    const router = useRouter();
+
     return (
         <section className="relative py-24 px-4 overflow-hidden bg-[#282C33] text-white">
             {/* Blurred Gradient Circles */}
@@ -173,7 +177,7 @@ export default function Projects() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-center"
                 >
-                    <button className="group relative px-8 py-4 text-lg font-semibold text-white border-2 border-[#C778DD] rounded-2xl hover:bg-[#C778DD] hover:text-black transition-all duration-500 overflow-hidden">
+                    <button className="group relative px-8 py-4 text-lg font-semibold text-white border-2 border-[#C778DD] rounded-2xl hover:bg-[#C778DD] hover:text-black transition-all duration-500 overflow-hidden" onClick={() => router.push('/projects')}>
                         <span className="relative z-10 flex items-center gap-3">
                             View All Projects
                             <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />

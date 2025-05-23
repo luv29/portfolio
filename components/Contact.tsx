@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 
 const Contact = () => {
 
@@ -8,19 +8,13 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "hello@yourname.dev",
-      href: "mailto:hello@yourname.dev"
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "luvkansal29@gmail.com",
+      href: "mailto:luvkansal29@gmail.com"
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Surat, India",
       href: null
     }
   ];
@@ -29,19 +23,19 @@ const Contact = () => {
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/luv29",
       color: "hover:text-gray-300"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/luv-kansal",
       color: "hover:text-blue-400"
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
+      icon: <Instagram className="w-5 h-5" />,
       label: "Twitter",
-      href: "https://twitter.com/yourusername",
+      href: "https://www.instagram.com/luv_295",
       color: "hover:text-sky-400"
     }
   ];
@@ -127,9 +121,9 @@ const Contact = () => {
               </div>
               <div className="font-mono text-sm space-y-2">
                 <div className="text-purple-400">const <span className="text-blue-400">contact</span> = {`{`}</div>
-                <div className="ml-4 text-gray-300">name: <span className="text-green-400">"Your Name"</span>,</div>
-                <div className="ml-4 text-gray-300">email: <span className="text-green-400">"hello@yourname.dev"</span>,</div>
-                <div className="ml-4 text-gray-300">location: <span className="text-green-400">"San Francisco, CA"</span>,</div>
+                <div className="ml-4 text-gray-300">name: <span className="text-green-400">"Luv Kansal"</span>,</div>
+                <div className="ml-4 text-gray-300">email: <span className="text-green-400">"luvkansal29@gmail.com"</span>,</div>
+                <div className="ml-4 text-gray-300">location: <span className="text-green-400">"Surat, India"</span>,</div>
                 <div className="ml-4 text-gray-300">available: <span className="text-orange-400">true</span></div>
                 <div className="text-purple-400">{`}`}</div>
               </div>
@@ -146,14 +140,14 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@yourname.dev"
+                href="mailto:luvkansal29@gmail.com"
                 className="bg-orange-400 hover:bg-orange-500 text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
               >
                 <Mail className="w-5 h-5" />
                 Get In Touch
               </a>
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1COJeSfpw6erzNGL2JEaQfMHVtL8Hxvaa/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
