@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/components/NavBar"
 import TopSocial from "@/components/TopSocial"
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Luv Kansal",
@@ -21,7 +22,10 @@ export default function RootLayout({
         </div>
 
         <NavBar />
+
         {children}
+        
+        <Footer />
       </body>
     </html>
   );
