@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="absolute top-0 left-[17px]  z-[500]">
+        <div className="absolute top-0 left-[17px]  z-[500] hidden md:block">
           <TopSocial />
         </div>
 

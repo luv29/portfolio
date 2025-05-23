@@ -9,6 +9,10 @@ import github from "@/public/images/github.png"
 import www from "@/public/images/www.png"
 import youtube from "@/public/images/youtube.png"
 import { motion } from "framer-motion"
+import sideDots from "@/public/images/side-dots.png"
+import sq from "@/public/images/sq2.png"
+import lsq from "@/public/images/sq3.png"
+import sideDot2 from '@/public/images/side-dot2.png'
 
 function Projects() {
     const cards = [
@@ -75,6 +79,36 @@ function Projects() {
 
     return (
         <div className='w-full flex justify-center py-16 bg-[#282C33] text-white'>
+            <Image
+                src={sideDots}
+                alt="."
+                className="absolute left-0 top-[50%] hidden md:block"
+            />
+
+            <Image 
+                src={sq}
+                alt="sq"
+                className="absolute right-0 top-[20%] hidden md:block"
+            />
+
+            <Image 
+                src={lsq}
+                alt="sq"
+                className="absolute left-0 top-[130%] hidden md:block"
+            />
+
+            <Image
+                src={sideDot2}
+                alt="."
+                className="absolute right-0 top-[170%] hidden md:block"
+            />
+
+            <Image
+                src={sideDot2}
+                alt="."
+                className="absolute left-0 top-[250%] hidden md:block"
+            />
+
             <div className='w-[90vw] max-w-[1200px]'>
                 <div className='mb-12'>
                     <h2 className='text-5xl font-bold mb-2 text-white'>Projects</h2>
@@ -87,7 +121,7 @@ function Projects() {
                         return (
                             <motion.div
                                 key={index}
-                                className={`w-full flex flex-col lg:flex-row ${isReversed ? "lg:flex-row-reverse" : ""} items-center gap-10 bg-[#2F343F] p-8 rounded-2xl shadow-lg`}
+                                className={`w-full flex flex-col-reverse lg:flex-row ${isReversed ? "lg:flex-row-reverse" : ""} items-center gap-10 bg-[#2F343F] p-8 rounded-2xl shadow-lg`}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}
