@@ -1,8 +1,10 @@
+import Achievements from "@/components/Achievements";
 import HeroSection from "@/components/HeroSection"
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import sq from "@/public/images/sq1.png";
 import Image from "next/image";
+import Contact from "@/components/Contact";
 
 function Home() {
   return (
@@ -18,6 +20,8 @@ function Home() {
       <HeroSection />
       <Projects />
       <Skills />
+      <Achievements />
+      <Contact />
     </div>
   )
 }
