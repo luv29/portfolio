@@ -1,93 +1,187 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import qwikaid from "@/public/images/qwikaid.png";
-import lockout from "@/public/images/lockout.png";
-import dns from "@/public/images/dns.png";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
     {
-        image: qwikaid,
+        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
         title: "QwikAid",
         tech: ["LangGraph", "MCP", "FastAPI", "SQLite", "OpenAI", "React Native", "Tailwind CSS"],
         description: "Agentic AI–Powered Roadside Assistance App",
-        href: "/projects"
+        category: "AI/Mobile",
+        href: "/projects",
+        featured: true
     },
     {
-        image: lockout,
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
         title: "Lockout",
-        tech: ["Express.js", "TypeScript", "OAuth 2.0", "MonogoDB", "React.js", "Tailwind CSS"],
+        tech: ["Express.js", "TypeScript", "OAuth 2.0", "MongoDB", "React.js", "Tailwind CSS"],
         description: "1v1 Competitive Programming Platform",
-        href: "/projects"
-    },
-    {
-        image: dns,
-        title: "DNS Server",
-        tech: ["Node.js (dgram)", "TypeScript", "MongoDB", "Winston Logger"],
-        description: "High-Performance UDP-Based DNS Server",
-        href: "/projects"
+        category: "Web Platform",
+        href: "/projects",
+        featured: false
     }
 ];
 
-export default function Projects() {
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1]
+        }
+    }
+};
+
+const ProjectCard = ({ project }) => {
+    const { image, title, tech, description, category, featured } = project;
+
     return (
-        <div className='w-[90vw] max-w-[1200px] mx-auto mt-[100px]'>
-            <div className='flex flex-col sm:flex-row items-center justify-between gap-6 mb-10'>
-                <div className='flex items-center gap-4 w-full sm:w-auto'>
-                    <p className='text-3xl whitespace-nowrap'>Projects</p>
-                    <div className='h-[1px] bg-[#C778DD] flex-1'></div>
+        <motion.div
+            variants={cardVariants}
+            className={`group relative overflow-hidden rounded-2xl bg-[#1e1e24] border border-[#3a3f4b] hover:border-[#C778DD]/50 transition-all duration-700 ${
+                featured ? 'lg:col-span-2 lg:row-span-1' : ''
+            }`}
+            whileHover={{
+                y: -8,
+                transition: { duration: 0.3, ease: "easeOut" }
+            }}
+        >
+            {/* Background Image */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div
+                    className="absolute inset-0 bg-cover bg-center scale-110 group-hover:scale-105 transition-transform duration-700"
+                    style={{ backgroundImage: `url(${image})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#282C33]/95 via-[#282C33]/80 to-[#282C33]/60" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#C778DD]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+
+            {/* Content */}
+            <div className={`relative z-10 p-8 h-full flex flex-col justify-between ${featured ? 'lg:p-10' : ''}`}>
+                {/* Category Badge */}
+                <div className="flex items-center justify-between mb-6">
+                    <span className="px-3 py-1 text-xs font-medium text-[#C778DD] bg-[#C778DD]/10 rounded-full border border-[#C778DD]/20">
+                        {category}
+                    </span>
+                    {featured && (
+                        <span className="px-3 py-1 text-xs font-medium text-emerald-400 bg-emerald-400/10 rounded-full border border-emerald-400/20">
+                            Featured
+                        </span>
+                    )}
                 </div>
 
-                <Link href="/projects" className="text-lg text-[#C778DD] hover:underline">
-                    {"View all ~~>"}
-                </Link>
+                {/* Info */}
+                <div className="flex-1">
+                    <h3 className={`font-bold text-white mb-3 group-hover:text-[#C778DD] transition-colors duration-300 ${
+                        featured ? 'text-3xl lg:text-4xl' : 'text-xl'
+                    }`}>
+                        {title}
+                    </h3>
+                    <p className={`text-slate-300 leading-relaxed mb-6 ${featured ? 'text-lg' : 'text-sm'}`}>
+                        {description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                        {tech.slice(0, featured ? tech.length : 4).map((techItem, idx) => (
+                            <span
+                                key={idx}
+                                className="px-3 py-1 text-xs font-medium text-slate-300 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-[#C778DD]/50 hover:text-[#C778DD] transition-colors duration-300"
+                            >
+                                {techItem}
+                            </span>
+                        ))}
+                        {!featured && tech.length > 4 && (
+                            <span className="px-3 py-1 text-xs font-medium text-slate-400 bg-slate-800/30 rounded-lg border border-slate-600/20">
+                                +{tech.length - 4} more
+                            </span>
+                        )}
+                    </div>
+                </div>
+
+                {/* Only View Project Button */}
+                <div>
+                    <button className="flex items-center gap-2 px-6 py-3 bg-[#C778DD] text-black font-medium rounded-xl hover:bg-[#C778DD]/90 hover:scale-105 transition-all duration-300 group/btn">
+                        <span>View Project</span>
+                        <ArrowUpRight className="w-4 h-4 group-hover/btn:rotate-45 transition-transform duration-300" />
+                    </button>
+                </div>
             </div>
+        </motion.div>
+    );
+};
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        className="border border-[#ABB2BF] p-4 flex flex-col hover:shadow-xl hover:scale-[1.01] transition-transform rounded-lg"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                    >
-                        <Image
-                            src={project.image}
-                            alt={project.title}
-                            className="rounded-md object-cover h-[180px] w-full mb-4"
-                        />
+export default function Projects() {
+    return (
+        <section className="relative py-24 px-4 overflow-hidden bg-[#282C33] text-white">
+            {/* Blurred Gradient Circles */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#C778DD]/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
 
-                        <div className="border-t border-[#ABB2BF] my-2"></div>
+            <div className="relative z-10 max-w-7xl mx-auto">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-center mb-20"
+                >
+                    <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                        Projects
+                    </h2>
 
-                        <div className="flex flex-wrap gap-2 text-sm text-[#ABB2BF] mb-2">
-                            {project.tech.map((tech, idx) => (
-                                <span
-                                    key={idx}
-                                    className="px-2 py-0.5 border border-[#ABB2BF] rounded-full"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
+                    <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        A showcase of my latest work, featuring innovative solutions and cutting-edge technologies.
+                    </p>
+                </motion.div>
 
-                        <div className="border-t border-[#ABB2BF] my-2"></div>
+                {/* Projects Grid */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16"
+                >
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} project={project} />
+                    ))}
+                </motion.div>
 
-                        <p className="text-xl font-semibold mb-1">{project.title}</p>
-                        <p className="text-sm text-[#ABB2BF] mb-4">{project.description}</p>
-
-                        <Link
-                            href={project.href}
-                            className="self-start mt-auto border border-[#C778DD] px-4 py-1 text-sm text-[#C778DD] hover:bg-[#C778DD] hover:text-black transition-colors rounded"
-                        >
-                            See More {"<~>"}
-                        </Link>
-                    </motion.div>
-                ))}
+                {/* CTA Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="text-center"
+                >
+                    <button className="group relative px-8 py-4 text-lg font-semibold text-white border-2 border-[#C778DD] rounded-2xl hover:bg-[#C778DD] hover:text-black transition-all duration-500 overflow-hidden">
+                        <span className="relative z-10 flex items-center gap-3">
+                            View All Projects
+                            <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+                        </span>
+                        <div className="absolute inset-0 bg-[#C778DD] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                    </button>
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 }
