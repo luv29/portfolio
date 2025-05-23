@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection"
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 import sq from "@/public/images/sq1.png";
 import Image from "next/image";
 
@@ -16,6 +17,7 @@ function Home() {
       
       <HeroSection />
       <Projects />
+      <Skills />
     </div>
   )
 }

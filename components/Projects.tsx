@@ -18,7 +18,7 @@ const projects = [
     {
         image: lockout,
         title: "Lockout",
-        tech: ["Express.js", "TypeScript", "OAuth 2.0", "JWT", "MonogoDB", "React.js", "Tailwind CSS"],
+        tech: ["Express.js", "TypeScript", "OAuth 2.0", "MonogoDB", "React.js", "Tailwind CSS"],
         description: "1v1 Competitive Programming Platform",
         href: "/projects"
     },
@@ -49,7 +49,7 @@ export default function Projects() {
                 {projects.map((project, index) => (
                     <motion.div
                         key={index}
-                        className="border border-[#ABB2BF] p-4 flex flex-col bg-[#1E2127] hover:shadow-xl hover:scale-[1.01] transition-transform rounded-lg"
+                        className="border border-[#ABB2BF] p-4 flex flex-col hover:shadow-xl hover:scale-[1.01] transition-transform rounded-lg"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
