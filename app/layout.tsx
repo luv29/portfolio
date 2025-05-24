@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         description: 'Portfolio of Luv Kansal - Software Engineer.',
         images: [
             {
-                url: '/icon0.svg',
+                url: 'https://luvkansal.vercel.app/icon0.svg',
                 width: 1200,
                 height: 630,
                 alt: 'Luv Kansal - Portfolio',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Luv Kansal - Software Engineer',
         description: 'Portfolio of Luv Kansal - Software Engineer',
-        images: ['/icon0.svg'],
+        images: ['https://luvkansal.vercel.app/icon0.svg'],
         creator: '@luvkansal29',
     },
     alternates: {
@@ -74,7 +74,6 @@ export const metadata: Metadata = {
     category: 'technology',
     classification: 'Portfolio Website',
     referrer: 'origin-when-cross-origin',
-    // ❌ Removed themeColor and colorScheme from here (moved to viewport)
     other: {
         'apple-mobile-web-app-capable': 'yes',
         'apple-mobile-web-app-status-bar-style': 'black-translucent',
@@ -85,7 +84,7 @@ export const metadata: Metadata = {
     },
 };
 
-// ✅ Fixed: Move themeColor and colorScheme here
+// ✅ Theme color and color scheme
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1,
@@ -98,7 +97,7 @@ export const viewport: Viewport = {
     colorScheme: 'dark',
 };
 
-// ✅ Page-specific metadata for different routes
+// ✅ Page-specific metadata
 export const projectsMetadata: Metadata = {
     title: "Projects - Luv Kansal",
     description: "Explore the projects built by Luv Kansal including full-stack applications, competitive programming solutions, and Agentic AI implementations.",
@@ -106,10 +105,19 @@ export const projectsMetadata: Metadata = {
         title: "Projects - Luv Kansal",
         description: "Explore the projects built by Luv Kansal including full-stack applications, competitive programming solutions, and Agentic AI implementations.",
         url: 'https://luvkansal.vercel.app/projects',
+        images: [
+            {
+                url: 'https://luvkansal.vercel.app/icon0.svg',
+                width: 1200,
+                height: 630,
+                alt: 'Luv Kansal - Projects',
+            },
+        ],
     },
     twitter: {
         title: "Projects - Luv Kansal",
         description: "Explore the projects built by Luv Kansal including full-stack applications, competitive programming solutions, and Agentic AI implementations.",
+        images: ['https://luvkansal.vercel.app/icon0.svg'],
     },
     alternates: {
         canonical: 'https://luvkansal.vercel.app/projects',
@@ -123,10 +131,19 @@ export const linksMetadata: Metadata = {
         title: "Connect - Luv Kansal",
         description: "Connect with Luv Kansal on various coding platforms including Codeforces, CodeChef, LeetCode, and GitHub. View achievements and certifications.",
         url: 'https://luvkansal.vercel.app/link-tree',
+        images: [
+            {
+                url: 'https://luvkansal.vercel.app/icon0.svg',
+                width: 1200,
+                height: 630,
+                alt: 'Luv Kansal - Connect',
+            },
+        ],
     },
     twitter: {
         title: "Connect - Luv Kansal",
         description: "Connect with Luv Kansal on various coding platforms including Codeforces, CodeChef, LeetCode, and GitHub. View achievements and certifications.",
+        images: ['https://luvkansal.vercel.app/icon0.svg'],
     },
     alternates: {
         canonical: 'https://luvkansal.vercel.app/link-tree',

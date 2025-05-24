@@ -29,7 +29,7 @@ function NavBar(): JSX.Element {
     { name: 'Skills', href: '/#skills', icon: <Code className="w-4 h-4" /> },
     { name: 'Achievements', href: '/#achievements', icon: <Award className="w-4 h-4" /> },
     { name: 'Contact', href: '/#contact', icon: <Mail className="w-4 h-4" /> },
-    { name: 'Connect', href: '/link-tree', icon: <ExternalLink className="w-4 h-4" /> },
+    { name: 'Links', href: '/link-tree', icon: <ExternalLink className="w-4 h-4" /> },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
