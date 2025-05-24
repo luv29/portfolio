@@ -4,8 +4,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import hero from "@/public/images/image.png";
 import iv from "@/public/images/inverted-comma.png";
+import { JSX } from "react";
 
-function HeroSection() {
+function HeroSection(): JSX.Element {
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}

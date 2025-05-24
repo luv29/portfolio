@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 
-const Contact = () => {
+const Contact: React.FC = () => {
 
   const contactInfo = [
     {

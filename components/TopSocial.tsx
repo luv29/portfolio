@@ -6,8 +6,9 @@ import line from "@/public/images/top-line.png";
 import github from "@/public/images/github.png";
 import linkedin from "@/public/images/linkedin.png";
 import instagram from "@/public/images/instagram.png";
+import { JSX } from "react";
 
-function TopSocial() {
+function TopSocial(): JSX.Element {
     return (
         <motion.div
             className="flex flex-col justify-center items-center gap-3"

@@ -1,7 +1,28 @@
 'use client';
-import { useState, useEffect } from "react";
+import { useState, useEffect, JSX } from "react";
 
-const skills = [
+type Skill = {
+    category: string;
+    items: string[];
+    gradient: string;
+    icon: string;
+    bgGlow: string;
+};
+
+type FloatingOrbProps = {
+    delay: number;
+    size: string;
+    position: string;
+};
+
+type SkillCardProps = {
+    skill: Skill;
+    index: number;
+    isHovered: boolean;
+    setHoveredCard: React.Dispatch<React.SetStateAction<number | null>>;
+};
+
+const skills: Skill[] = [
     {
         category: "Languages",
         items: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript", "Bash", "SQL"],
@@ -32,7 +53,7 @@ const skills = [
     },
 ];
 
-const FloatingOrb = ({ delay, size, position }) => (
+const FloatingOrb: React.FC<FloatingOrbProps> = ({ delay, size, position }) => (
     <div
         className={`absolute ${position} ${size} rounded-full opacity-20 animate-pulse pointer-events-none`}
         style={{
@@ -43,8 +64,8 @@ const FloatingOrb = ({ delay, size, position }) => (
     />
 );
 
-const SkillCard = ({ skill, index, isHovered, setHoveredCard }) => {
-    const [animatedItems, setAnimatedItems] = useState([]);
+const SkillCard: React.FC<SkillCardProps> = ({ skill, index, isHovered, setHoveredCard }) => {
+    const [animatedItems, setAnimatedItems] = useState<number[]>([]);
 
     useEffect(() => {
         if (isHovered) {
@@ -139,12 +160,12 @@ const SkillCard = ({ skill, index, isHovered, setHoveredCard }) => {
     );
 };
 
-export default function SkillsSection() {
-    const [hoveredCard, setHoveredCard] = useState(null);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+export default function Skills(): JSX.Element {
+    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+    const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: MouseEvent) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
         };
         window.addEventListener('mousemove', handleMouseMove);

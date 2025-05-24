@@ -1,10 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Link } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { JSX } from "react";
 
-const projects = [
+interface IProject {
+    image: string;
+    title: string;
+    tech: string[];
+    description: string;
+    category: string;
+    href: string;
+    featured: boolean;
+}
+
+const projects: IProject[] = [
     {
         image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
         title: "QwikAid",
@@ -49,7 +60,9 @@ const cardVariants = {
     }
 };
 
-const ProjectCard = ({ project }) => {
+const ProjectCard: React.FC<{
+    project: IProject
+}> = ({ project }) => {
     const router = useRouter();
     const { image, title, tech, description, category, featured } = project;
 
@@ -129,7 +142,7 @@ const ProjectCard = ({ project }) => {
     );
 };
 
-export default function Projects() {
+export default function Projects(): JSX.Element {
     const router = useRouter();
 
     return (

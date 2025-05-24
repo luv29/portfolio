@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import { Trophy, Star, Medal, Target, Code, Award, Zap, Crown, ExternalLink, Users } from "lucide-react"
+import React, { JSX } from "react";
 
-function Achievements() {
+function Achievements(): JSX.Element {
     const achievements = [
         {
             icon: Trophy,

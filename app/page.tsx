@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from "react";
+import { JSX, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
@@ -8,7 +8,7 @@ import Contact from "@/components/Contact";
 import Image from "next/image";
 import sq from "@/public/images/sq1.png";
 
-function Home() {
+function Home(): JSX.Element {
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {

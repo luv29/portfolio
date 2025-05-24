@@ -7,26 +7,27 @@ import icon from '@/public/images/icon.png';
 import github from "@/public/images/github.png";
 import linkedin from "@/public/images/linkedin.png";
 import instagram from "@/public/images/instagram.png";
+import { JSX } from 'react';
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        transition: { 
-            duration: 0.8, 
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
             ease: "easeOut",
             staggerChildren: 0.2
-        } 
+        }
     }
 };
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-        opacity: 1, 
-        y: 0, 
-        transition: { duration: 0.6, ease: "easeOut" } 
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" }
     }
 };
 
@@ -36,10 +37,12 @@ const logoHover = {
     transition: { type: "spring", stiffness: 300, damping: 15 }
 };
 
-const socialHover = {
-    scale: 1.15,
-    y: -5,
-    transition: { type: "spring", stiffness: 400, damping: 10 }
+const socialVariants = {
+    hover: {
+        scale: 1.15,
+        y: -5,
+        transition: { type: "spring", stiffness: 400, damping: 10 }
+    }
 };
 
 const glowVariants = {
@@ -57,9 +60,9 @@ const glowVariants = {
     }
 };
 
-function Footer() {
+function Footer(): JSX.Element {
     const currentYear = new Date().getFullYear();
-    
+
     return (
         <motion.footer
             className="bg-gradient-to-br from-[#1a1d23] via-[#282C33] to-[#2a2f37] text-white relative overflow-hidden"
@@ -68,34 +71,29 @@ function Footer() {
             viewport={{ once: true }}
             variants={containerVariants}
         >
-            {/* Animated Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-10 left-10 w-32 h-32 border border-[#FF6B35] rounded-full animate-pulse"></div>
                 <div className="absolute bottom-20 right-20 w-24 h-24 border border-[#61dafb] rounded-full animate-pulse delay-1000"></div>
                 <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-[#ABB2BF] rounded-full animate-pulse delay-500"></div>
             </div>
 
-            {/* Glowing Top Border */}
-            <motion.div 
+            <motion.div
                 className="h-1 bg-gradient-to-r from-transparent via-[#FF6B35] to-transparent"
                 variants={glowVariants}
                 animate="animate"
             />
 
             <div className="max-w-[1200px] mx-auto px-6 md:px-12 py-16">
-                {/* Main Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-                    
-                    {/* Brand Section */}
-                    <motion.div 
+
+                    <motion.div
                         className="lg:col-span-1 text-center lg:text-left"
                         variants={itemVariants}
                     >
                         <Link href='/' className="inline-flex items-center gap-4 group mb-6">
-                            <motion.div 
-                                whileHover={{ rotate: 360, scale: 1.2 }} 
+                            <motion.div
+                                whileHover={logoHover}
                                 className="relative"
-                                transition={{ duration: 0.6, ease: "easeInOut" }}
                             >
                                 <div className="absolute inset-0 bg-[#FF6B35] opacity-20 rounded-full blur-md"></div>
                                 <Image
@@ -116,8 +114,8 @@ function Footer() {
                                 <p className="text-[#ABB2BF] text-sm font-mono">Software Engineer</p>
                             </motion.div>
                         </Link>
-                        
-                        <motion.div 
+
+                        <motion.div
                             className="space-y-2 mb-6"
                             variants={itemVariants}
                         >
@@ -129,8 +127,7 @@ function Footer() {
                             </p>
                         </motion.div>
 
-                        {/* Contact Info with Style */}
-                        <motion.div 
+                        <motion.div
                             className="p-4 bg-gradient-to-r from-[#1a1d23] to-[#2a2f37] rounded-lg border border-[#ABB2BF]/20 hover:border-[#FF6B35]/50 transition-all duration-300"
                             whileHover={{ scale: 1.02 }}
                             variants={itemVariants}
@@ -144,8 +141,7 @@ function Footer() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Navigation/Links Section */}
-                    <motion.div 
+                    <motion.div
                         className="lg:col-span-1 text-center"
                         variants={itemVariants}
                     >
@@ -167,8 +163,7 @@ function Footer() {
                             ))}
                         </div>
 
-                        {/* Code Block Decoration */}
-                        <motion.div 
+                        <motion.div
                             className="mt-8 bg-[#1a1d23] rounded-lg p-4 border border-[#ABB2BF]/20"
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
@@ -179,21 +174,20 @@ function Footer() {
                                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
                             </div>
                             <div className="text-left font-mono text-xs space-y-1">
-                                <div className="text-purple-400">const <span className="text-blue-400">status</span> = {`{`}</div>
+                                <div className="text-purple-400">const <span className="text-blue-400">status</span> = {'{'}</div>
                                 <div className="ml-4 text-gray-300">coffee: <span className="text-orange-400">true</span>,</div>
                                 <div className="ml-4 text-gray-300">coding: <span className="text-green-400">"24/7"</span></div>
-                                <div className="text-purple-400">{`}`}</div>
+                                <div className="text-purple-400">{'}'}</div>
                             </div>
                         </motion.div>
                     </motion.div>
 
-                    {/* Social Section */}
-                    <motion.div 
+                    <motion.div
                         className="lg:col-span-1 text-center lg:text-right"
                         variants={itemVariants}
                     >
                         <h4 className="text-lg font-semibold mb-6 text-[#FF6B35]">Connect With Me</h4>
-                        
+
                         <div className="flex justify-center lg:justify-end gap-6 mb-8">
                             {[
                                 {
@@ -222,7 +216,7 @@ function Footer() {
                                     rel="noopener noreferrer"
                                     aria-label={alt}
                                     className={`p-3 rounded-full bg-[#ABB2BF]/10 border border-[#ABB2BF]/20 ${color} transition-all duration-300 group`}
-                                    variants={socialHover}
+                                    variants={socialVariants}
                                     whileHover="hover"
                                     whileTap={{ scale: 0.9 }}
                                 >
@@ -237,8 +231,7 @@ function Footer() {
                             ))}
                         </div>
 
-                        {/* Fun Stats */}
-                        <motion.div 
+                        <motion.div
                             className="grid grid-cols-2 gap-4 text-center"
                             variants={itemVariants}
                         >
@@ -254,8 +247,7 @@ function Footer() {
                     </motion.div>
                 </div>
 
-                {/* Bottom Section */}
-                <motion.div 
+                <motion.div
                     className="border-t border-[#ABB2BF]/20 pt-8"
                     variants={itemVariants}
                 >
@@ -264,11 +256,11 @@ function Footer() {
                             className="text-[#ABB2BF] text-sm font-mono"
                             variants={itemVariants}
                         >
-                            <span className="text-[#FF6B35]">©</span> {currentYear} Luv Kansal. 
+                            <span className="text-[#FF6B35]">©</span> {currentYear} Luv Kansal.
                             <span className="text-[#61dafb]"> Crafted with ❤️ and lots of ☕</span>
                         </motion.p>
-                        
-                        <motion.div 
+
+                        <motion.div
                             className="flex items-center gap-2 text-sm text-[#ABB2BF] font-mono"
                             variants={itemVariants}
                         >
@@ -279,7 +271,6 @@ function Footer() {
                 </motion.div>
             </div>
 
-            {/* Bottom Glow Effect */}
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-[#FF6B35] to-transparent opacity-50"></div>
         </motion.footer>
     );

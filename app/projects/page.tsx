@@ -13,8 +13,9 @@ import sideDots from "@/public/images/side-dots.png"
 import sq from "@/public/images/sq2.png"
 import lsq from "@/public/images/sq3.png"
 import sideDot2 from '@/public/images/side-dot2.png'
+import { JSX } from "react"
 
-function Projects() {
+function Projects(): JSX.Element {
     const cards = [
         {
             title: "QwikAid",

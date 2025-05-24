@@ -1,13 +1,13 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, JSX } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code, Home, FolderOpen, Award, Mail, Zap } from 'lucide-react';
 import icon from '@/public/images/icon.png';
 
-function NavBar() {
+function NavBar():JSX.Element {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
