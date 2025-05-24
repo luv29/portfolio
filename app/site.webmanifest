@@ -1,0 +1,20 @@
+{
+  "name": "Luv Kansal Portfolio",
+  "short_name": "Luv Kansal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#282C33",
+  "theme_color": "#FF6B35",
+  "icons": [
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

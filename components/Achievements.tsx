@@ -7,21 +7,6 @@ import React, { JSX } from "react";
 function Achievements(): JSX.Element {
     const achievements = [
         {
-            icon: Trophy,
-            title: "OPTIGO Inter-IIIT Contest",
-            subtitle: "5th Rank",
-            description: "Secured 5th rank in OPTIGO, the inter-IIIT coding contest hosted by CODAME, IIIT Bhopal.",
-            gradient: "from-yellow-400 via-orange-500 to-red-500",
-            bgGradient: "from-yellow-500/10 via-orange-500/10 to-red-500/10",
-            borderColor: "border-yellow-500/30",
-            glowColor: "shadow-yellow-500/20",
-            category: "Contest",
-            link: {
-                url: "#",
-                label: "View Certificate"
-            }
-        },
-        {
             icon: Code,
             title: "Codeforces Expert",
             subtitle: "1773 Rating",
@@ -39,15 +24,15 @@ function Achievements(): JSX.Element {
         {
             icon: Star,
             title: "CodeChef 5-Star",
-            subtitle: "2058 Rating",
-            description: "Achieved a max rating of 2058 (5-star) on CodeChef - Top 0.5% globally.",
+            subtitle: "2070 Rating",
+            description: "Achieved a max rating of 2070 (5-star) on CodeChef - Top 0.5% globally.",
             gradient: "from-purple-400 via-purple-500 to-indigo-600",
             bgGradient: "from-purple-500/10 via-purple-500/10 to-indigo-600/10",
             borderColor: "border-purple-500/30",
             glowColor: "shadow-purple-500/20",
             category: "Competitive Programming",
             link: {
-                url: "https://codechef.com/users/luv29",
+                url: "https://codechef.com/users/luvkansal29",
                 label: "View Profile"
             }
         },
@@ -62,8 +47,23 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-emerald-500/20",
             category: "Competitive Programming",
             link: {
-                url: "https://leetcode.com/luv29",
+                url: "https://leetcode.com/luvkansal29",
                 label: "View Profile"
+            }
+        },
+        {
+            icon: Trophy,
+            title: "OPTIGO Inter-IIIT Contest",
+            subtitle: "5th Rank",
+            description: "Secured 5th rank in OPTIGO, the inter-IIIT coding contest hosted by CODAME, IIIT Bhopal.",
+            gradient: "from-yellow-400 via-orange-500 to-red-500",
+            bgGradient: "from-yellow-500/10 via-orange-500/10 to-red-500/10",
+            borderColor: "border-yellow-500/30",
+            glowColor: "shadow-yellow-500/20",
+            category: "Contest",
+            link: {
+                url: "https://drive.google.com/file/d/1VtQjLaCHEK8UGNFVrAiFpzrK9DN8jHxe/view?usp=drive_link",
+                label: "View Certificate"
             }
         },
         {
@@ -77,8 +77,8 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-red-500/20",
             category: "Competition",
             link: {
-                url: "#",
-                label: "View Project"
+                url: "https://drive.google.com/file/d/1n-XVrTzf59fsXAh6sKXvtXbTrP5jH8RK/view?usp=drive_link",
+                label: "View Badge"
             }
         },
         {
@@ -92,7 +92,7 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-pink-500/20",
             category: "Hackathon",
             link: {
-                url: "#",
+                url: "https://drive.google.com/file/d/1Tv77mfnyDxCLAxLtM_BNvXVUsaZCprqR/view?usp=drive_link",
                 label: "View Certificate"
             }
         },
@@ -109,21 +109,6 @@ function Achievements(): JSX.Element {
             link: {
                 url: "#",
                 label: "View Scorecard"
-            }
-        },
-        {
-            icon: Award,
-            title: "Problem Setter - Infinity",
-            subtitle: "30K+ Participants",
-            description: "Developed and tested problems for Infinity held on CodeChef with over 30,000 participants.",
-            gradient: "from-violet-400 via-purple-500 to-indigo-600",
-            bgGradient: "from-violet-500/10 via-purple-500/10 to-indigo-600/10",
-            borderColor: "border-violet-500/30",
-            glowColor: "shadow-violet-500/20",
-            category: "Problem Setting",
-            link: {
-                url: "https://codechef.com/contests/INFY2023",
-                label: "View Contest"
             }
         }
     ];
@@ -244,7 +229,7 @@ function Achievements(): JSX.Element {
                         { label: "Contest Ranks", value: "Top 5%" },
                         { label: "Global Rating", value: "2000+" },
                         { label: "Competitions", value: "8+" },
-                        { label: "JEE Percentile", value: "98.6%" }
+                        { label: "JEE Advance AIR", value: "9960" }
                     ].map((stat, index) => (
                         <motion.div
                             key={index}
