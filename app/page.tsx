@@ -35,7 +35,7 @@ function Home(): JSX.Element {
       />
 
       <section id="hero"><HeroSection /></section>
-      <Projects />
+      <section id="projects"><Projects /></section>
       <section id="skills"><Skills /></section>
       <section id="achievements"><Achievements /></section>
       <section id="contact"><Contact /></section>

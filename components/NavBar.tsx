@@ -25,7 +25,7 @@ function NavBar(): JSX.Element {
 
   const navItems = [
     { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
-    { name: 'Projects', href: '/projects', icon: <FolderOpen className="w-4 h-4" /> },
+    { name: 'Projects', href: '/#projects', icon: <FolderOpen className="w-4 h-4" /> },
     { name: 'Skills', href: '/#skills', icon: <Code className="w-4 h-4" /> },
     { name: 'Achievements', href: '/#achievements', icon: <Award className="w-4 h-4" /> },
     { name: 'Contact', href: '/#contact', icon: <Mail className="w-4 h-4" /> },
