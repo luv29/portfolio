@@ -92,7 +92,6 @@ function Experience(): JSX.Element {
                                 <div className="w-full xl:w-1/2 relative group/image">
                                     <div className="relative overflow-hidden rounded-2xl aspect-video bg-[#1a1f28] border border-gray-700/50 flex items-center justify-center shadow-2xl group-hover/image:border-gray-600 transition-colors duration-300">
                                         {exp.image && (
-                                            // @ts-expect-error: Ignore image type mismatch for static import
                                             <Image src={exp.image} alt={exp.company} className="object-cover w-full h-full" />
                                         )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-pink-500/20 to-red-600/20 opacity-0 group-hover/image:opacity-30 transition-opacity duration-500 rounded-2xl" />
