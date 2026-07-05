@@ -162,7 +162,7 @@ function Projects(): JSX.Element {
             
             {/* Floating orbs */}
             <motion.div 
-                className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
+                className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl will-change-transform"
                 animate={{
                     x: [0, 50, 0],
                     y: [0, -30, 0],
@@ -175,7 +175,7 @@ function Projects(): JSX.Element {
                 }}
             />
             <motion.div 
-                className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
+                className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-l from-purple-500/10 to-pink-500/10 rounded-full blur-3xl will-change-transform"
                 animate={{
                     x: [0, -40, 0],
                     y: [0, 40, 0],
@@ -263,9 +263,9 @@ function Projects(): JSX.Element {
                                 className="group relative"
                             >
                                 {/* Glow effect */}
-                                <div className={`absolute -inset-1 bg-gradient-to-r ${card.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700`} />
+                                <div className={`absolute -inset-1 bg-gradient-to-r ${card.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700`} style={{ willChange: "opacity" }} />
                                 
-                                <div className={`relative w-full flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border ${card.borderGlow} shadow-2xl backdrop-blur-sm`}>
+                                <div className={`relative w-full flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border ${card.borderGlow} shadow-2xl`}>
                                     
                                     {/* Content Section */}
                                     <motion.div

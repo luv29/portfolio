@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, JSX } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 type Skill = {
     category: string;
@@ -91,7 +92,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, index, isHovered, setHover
         >
             <div className={`absolute -inset-1 rounded-3xl ${skill.bgGlow} blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500`} />
 
-            <div className="relative overflow-hidden rounded-3xl bg-[#1e1e24] border border-[#3a3f4b] group-hover:border-[#5a5f6b] transition-all duration-500 backdrop-blur-md">
+            <div className="relative overflow-hidden rounded-3xl bg-[#1e1e24] border border-[#3a3f4b] group-hover:border-[#5a5f6b] transition-all duration-500">
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${skill.gradient} transition-all duration-700`} />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     <div className="absolute top-0 -left-full h-full w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 animate-[shimmer_2s_ease-in-out_infinite]" />
@@ -162,15 +163,19 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, index, isHovered, setHover
 
 export default function Skills(): JSX.Element {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-    const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const smoothX = useSpring(mouseX, { damping: 50, stiffness: 400 });
+    const smoothY = useSpring(mouseY, { damping: 50, stiffness: 400 });
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+            mouseX.set(e.clientX - 192);
+            mouseY.set(e.clientY - 192);
         };
         window.addEventListener('mousemove', handleMouseMove);
         return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, []);
+    }, [mouseX, mouseY]);
 
     return (
         <section className="relative min-h-screen overflow-hidden py-24 px-6 bg-[#282C33] text-white font-mono">
@@ -179,12 +184,12 @@ export default function Skills(): JSX.Element {
                 <FloatingOrb delay={0} size="w-96 h-96" position="top-10 -left-48" />
                 <FloatingOrb delay={2} size="w-64 h-64" position="top-1/2 -right-32" />
                 <FloatingOrb delay={4} size="w-80 h-80" position="bottom-10 left-1/4" />
-                <div
-                    className="absolute w-96 h-96 rounded-full opacity-5 pointer-events-none transition-all duration-1000 ease-out"
+                <motion.div
+                    className="absolute w-96 h-96 rounded-full opacity-5 pointer-events-none"
                     style={{
                         background: 'radial-gradient(circle, rgba(199, 120, 221, 0.6) 0%, transparent 70%)',
-                        left: mousePosition.x - 192,
-                        top: mousePosition.y - 192,
+                        x: smoothX,
+                        y: smoothY,
                     }}
                 />
             </div>

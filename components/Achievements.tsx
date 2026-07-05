@@ -189,7 +189,7 @@ function Achievements(): JSX.Element {
         <div className='w-full flex justify-center py-20 bg-gradient-to-b from-[#282C33] via-[#252A35] to-[#282C33] text-white relative overflow-hidden'>
             {/* Animated Background Elements */}
             <motion.div 
-                className="absolute top-10 left-20 w-64 h-64 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 rounded-full blur-3xl"
+                className="absolute top-10 left-20 w-64 h-64 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 rounded-full blur-3xl will-change-transform"
                 animate={{
                     x: [0, 40, 0],
                     y: [0, -20, 0],
@@ -202,7 +202,7 @@ function Achievements(): JSX.Element {
                 }}
             />
             <motion.div 
-                className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-purple-500/5 to-blue-500/5 rounded-full blur-3xl"
+                className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-purple-500/5 to-blue-500/5 rounded-full blur-3xl will-change-transform"
                 animate={{
                     x: [0, -30, 0],
                     y: [0, 30, 0],
@@ -297,7 +297,7 @@ function Achievements(): JSX.Element {
                                 transition={{ duration: 0.3 }}
                             >
                                 {/* Glow Effect */}
-                                <div className={`absolute -inset-0.5 bg-gradient-to-r ${achievement.gradient} rounded-3xl blur opacity-0 group-hover:opacity-30 transition-all duration-500`} />
+                                <div className={`absolute -inset-0.5 bg-gradient-to-r ${achievement.gradient} rounded-3xl blur opacity-0 group-hover:opacity-30 transition-all duration-500`} style={{ willChange: "opacity" }} />
                                 
                                 <div className={`relative h-full bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-8 rounded-3xl border ${achievement.borderColor} shadow-xl ${achievement.glowColor} group-hover:shadow-2xl transition-all duration-500`}>
                                     

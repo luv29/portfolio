@@ -62,9 +62,9 @@ function Experience(): JSX.Element {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" style={{ willChange: "opacity" }} />
                             
-                            <div className="relative w-full flex flex-col xl:flex-row items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border border-purple-500/30 shadow-2xl backdrop-blur-sm">
+                            <div className="relative w-full flex flex-col xl:flex-row items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border border-purple-500/30 shadow-2xl">
                                 
                                 {/* Content Section */}
                                 <div className="w-full xl:w-1/2 space-y-6">
