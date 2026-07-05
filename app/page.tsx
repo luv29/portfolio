@@ -1,6 +1,7 @@
 'use client';
 import { JSX, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
+import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
@@ -35,6 +36,7 @@ function Home(): JSX.Element {
       />
 
       <section id="hero"><HeroSection /></section>
+      <section id="experience"><Experience /></section>
       <section id="projects"><Projects /></section>
       <section id="skills"><Skills /></section>
       <section id="achievements"><Achievements /></section>

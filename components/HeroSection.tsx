@@ -25,7 +25,7 @@ function HeroSection(): JSX.Element {
                     <h1 className="text-4xl md:text-5xl font-bold text-white"> Luv Kansal </h1>
 
                     <p className="text-[#ABB2BF] text-sm md:text-base leading-relaxed">
-                        He is a third-year student at IIIT Pune. With a sharp focus on backend systems,
+                        He is a final-year student at IIIT Pune. With a sharp focus on backend systems,
                         he excels at building scalable and robust applications. He’s highly skilled in AWS,
                         Gen AI, and Agentic AI, and has a strong track record in competitive programming.
                         Passionate about innovation, Luv is continuously pushing boundaries and making waves in the tech world.

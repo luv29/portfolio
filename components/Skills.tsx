@@ -24,29 +24,29 @@ type SkillCardProps = {
 
 const skills: Skill[] = [
     {
-        category: "Languages",
-        items: ["C", "C++", "Java", "Python", "JavaScript", "TypeScript", "Bash", "SQL"],
+        category: "Programming Languages",
+        items: ["Java", "C", "C++", "Python", "TypeScript", "JavaScript", "SQL"],
         gradient: "from-purple-400 via-pink-400 to-red-400",
         icon: "💻",
         bgGlow: "bg-purple-400/10"
     },
     {
-        category: "Frameworks",
-        items: ["Next.js", "FastAPI", "LangChain", "LangGraph", "React.js", "Express.js"],
+        category: "Frameworks & Libraries",
+        items: ["Spring Boot", "Nest.js", "Node.js", "Express.js", "FastAPI", "React.js", "LangChain", "LangGraph", "OpenAI"],
         gradient: "from-blue-400 via-cyan-400 to-teal-400",
         icon: "⚡",
         bgGlow: "bg-cyan-400/10"
     },
     {
         category: "Databases",
-        items: ["MongoDB", "SQLite", "PostgreSQL"],
+        items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
         gradient: "from-green-400 via-emerald-400 to-lime-400",
         icon: "🗄️",
         bgGlow: "bg-green-400/10"
     },
     {
-        category: "Cloud & DevOps",
-        items: ["AWS", "Docker", "Kubernetes", "Git", "Nginx"],
+        category: "DevOps & Tools",
+        items: ["Docker", "Kubernetes", "Kafka", "AWS", "Git", "Github", "Postman"],
         gradient: "from-yellow-400 via-orange-400 to-red-400",
         icon: "☁️",
         bgGlow: "bg-yellow-400/10"

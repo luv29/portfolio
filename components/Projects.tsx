@@ -18,6 +18,60 @@ import { JSX } from "react"
 function Projects(): JSX.Element {
     const cards = [
         {
+            title: "Satya Shield",
+            subtitle: "AI-Powered Misinformation Defense System",
+            image: qwikaid, // Placeholder: Replace with Satya Shield image
+            gradient: "from-blue-500/20 via-indigo-500/20 to-purple-600/20",
+            accentColor: "text-blue-400",
+            borderGlow: "border-blue-500/30",
+            features: [
+                "<b>Multi-Modal Detection:</b> Identified misinformation and deepfakes using an agentic AI architecture, surpassing 94% detection accuracy.",
+                "<b>Parallelized Verification:</b> Engineered a pipeline that decomposes content and queries live sources concurrently, reducing latency by 66%.",
+                "<b>Unified Backend:</b> Built a FastAPI backend serving both a Chrome Extension and WhatsApp Chatbot for cross-platform analysis.",
+                "<b>Tech Stack:</b> FastAPI, LangGraph, OpenAI SDK, React.js, Chrome API, WhatsApp Business API, Tavily Search API, MongoDB"
+            ],
+            links: [
+                { label: "Github", icon: github, href: "https://github.com/Satya-Shield" },
+                { label: "Demo", icon: www, href: "https://satya-shield-insight.vercel.app/" }
+            ]
+        },
+        {
+            title: "Lockout",
+            subtitle: "Real-Time 1v1 Competitive Coding Platform",
+            image: lockout,
+            gradient: "from-emerald-500/20 via-green-500/20 to-teal-600/20",
+            accentColor: "text-emerald-400",
+            borderGlow: "border-emerald-500/30",
+            features: [
+                "<b>End-to-End Automation:</b> Automated the complete tournament flow — from user registration and Codeforces handle verification to fixture generation, real-time match tracking, and winner advancement.",
+                "<b>Stateless Authentication:</b> Secured user access with JWT-based authentication using access/refresh tokens, along with Google/GitHub OAuth for flexible, session-less login and role-based access control.",
+                "<b>Real-Time Synchronization:</b> Implemented a WebSocket-based architecture to handle real-time code submission events and state synchronization, tested with 50+ concurrent users.",
+                "<b>Tech Stack:</b> Express.js, TypeScript, MongoDB (with Aggregation Pipeline), Socket.IO, React.js, Tailwind CSS, Codeforces API, JWT, OAuth 2.0"
+            ],
+            links: [
+                { label: "Github", icon: github, href: "https://github.com/luv29/Lockout" },
+                { label: "Demo", icon: www, href: "https://lockout-one.vercel.app/" }
+            ]
+        },
+        {
+            title: "SoulBot",
+            subtitle: "AI-Powered Mental Wellness Platform",
+            image: qwikaid, // Placeholder: Replace with SoulBot image
+            gradient: "from-pink-500/20 via-rose-500/20 to-red-600/20",
+            accentColor: "text-pink-400",
+            borderGlow: "border-pink-500/30",
+            features: [
+                "<b>3D Avatars:</b> Real-time mental wellness platform featuring expressive 3D avatars built using three.js for interactive conversations.",
+                "<b>Voice Interaction:</b> Implemented end-to-end voice interaction using Sarvam AI Streaming API (STT & TTS), along with LLM-based response generation.",
+                "<b>Session Analysis:</b> Processed conversation logs using a LangGraph agent to generate session summaries and compute PHQ-9 and GAD-7 scores.",
+                "<b>Tech Stack:</b> Nest.js, Socket.io, TypeScript, Sarvam AI, LangGraph, OpenAI SDK, React.js, Three.js"
+            ],
+            links: [
+                { label: "Github", icon: github, href: "https://github.com/luv29/SoulBot-Backend" },
+                { label: "Video", icon: youtube, href: "https://www.youtube.com/watch?v=pgZ8iQq7teM" }
+            ]
+        },
+        {
             title: "QwikAid",
             subtitle: "Agentic AI–Powered Roadside Assistance App",
             image: qwikaid,
@@ -34,24 +88,6 @@ function Projects(): JSX.Element {
             links: [
                 { label: "Github", icon: github, href: "https://github.com/luv29/QuickAid" },
                 { label: "Video", icon: youtube, href: "https://www.youtube.com/watch?v=UXwAH9RPpto" }
-            ]
-        },
-        {
-            title: "Lockout",
-            subtitle: "1v1 Competitive Programming Platform",
-            image: lockout,
-            gradient: "from-emerald-500/20 via-green-500/20 to-teal-600/20",
-            accentColor: "text-emerald-400",
-            borderGlow: "border-emerald-500/30",
-            features: [
-                "<b>End-to-End Automation:</b> Automated the complete tournament flow — from user registration and Codeforces handle verification to fixture generation, real-time match tracking, and winner advancement.",
-                "<b>Stateless Authentication:</b> Secured user access with JWT-based authentication using access/refresh tokens, along with Google/GitHub OAuth for flexible, session-less login and role-based access control.",
-                "<b>Real-Time Match Handling:</b> Used WebSockets to monitor Codeforces submissions, auto-scoring every 1.5 minutes.",
-                "<b>Tech Stack:</b> Express.js, TypeScript, MongoDB (with Aggregation Pipeline), Socket.IO, React.js, Tailwind CSS, Codeforces API, JWT, OAuth 2.0"
-            ],
-            links: [
-                { label: "Github", icon: github, href: "https://github.com/luv29/Lockout" },
-                { label: "Website", icon: www, href: "https://lockout-one.vercel.app/" }
             ]
         },
         {

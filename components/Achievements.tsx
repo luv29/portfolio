@@ -8,9 +8,24 @@ function Achievements(): JSX.Element {
     const achievements = [
         {
             icon: Code,
-            title: "Codeforces Expert",
-            subtitle: "1773 Rating",
-            description: "Achieved a max rating of 1773 (Expert) on Codeforces - Top 5% in the country.",
+            title: "ICPC Regionalist",
+            subtitle: "Rank 48",
+            description: "Secured Rank 48 at ICPC Kanpur Regionals among India’s top collegiate teams (2025-26).",
+            gradient: "from-blue-400 via-blue-500 to-blue-600",
+            bgGradient: "from-blue-500/10 via-blue-500/10 to-blue-600/10",
+            borderColor: "border-blue-500/30",
+            glowColor: "shadow-blue-500/20",
+            category: "Competitive Programming",
+            link: {
+                url: "#",
+                label: "View Certificate"
+            }
+        },
+        {
+            icon: Code,
+            title: "Codeforces Candidate Master",
+            subtitle: "1919 Rating",
+            description: "Achieved a max rating of 1919 (Candidate Master) on Codeforces - Top 2% globally.",
             gradient: "from-blue-400 via-blue-500 to-blue-600",
             bgGradient: "from-blue-500/10 via-blue-500/10 to-blue-600/10",
             borderColor: "border-blue-500/30",
@@ -24,8 +39,8 @@ function Achievements(): JSX.Element {
         {
             icon: Star,
             title: "CodeChef 5-Star",
-            subtitle: "2070 Rating",
-            description: "Achieved a max rating of 2070 (5-star) on CodeChef - Top 0.5% globally.",
+            subtitle: "2086 Rating",
+            description: "Achieved a max rating of 2086 (5-star) on CodeChef - Ranked <1000 among 240,000+ globally.",
             gradient: "from-purple-400 via-purple-500 to-indigo-600",
             bgGradient: "from-purple-500/10 via-purple-500/10 to-indigo-600/10",
             borderColor: "border-purple-500/30",
@@ -38,9 +53,9 @@ function Achievements(): JSX.Element {
         },
         {
             icon: Crown,
-            title: "LeetCode Knight",
-            subtitle: "2080 Rating",
-            description: "Achieved a max rating of 2080 (Knight) on LeetCode - Top 2% globally.",
+            title: "LeetCode Guardian",
+            subtitle: "2145 Rating",
+            description: "Achieved a max rating of 2145 (Guardian) on LeetCode - Top 2% worldwide.",
             gradient: "from-emerald-400 via-green-500 to-teal-600",
             bgGradient: "from-emerald-500/10 via-green-500/10 to-teal-600/10",
             borderColor: "border-emerald-500/30",
@@ -69,8 +84,8 @@ function Achievements(): JSX.Element {
         {
             icon: Users,
             title: "GDG Solution Challenge",
-            subtitle: "Top 105 Teams",
-            description: "Shortlisted among the top 105 teams in the Google Developer Groups Solution Challenge.",
+            subtitle: "Finalist",
+            description: "Finalist - invited to the Google office for the finals; ranked among the top 14 out of 3,700+ teams.",
             gradient: "from-red-400 via-red-500 to-orange-600",
             bgGradient: "from-red-500/10 via-red-500/10 to-orange-600/10",
             borderColor: "border-red-500/30",
@@ -82,17 +97,32 @@ function Achievements(): JSX.Element {
             }
         },
         {
-            icon: Zap,
-            title: "Odoo x Mindbend Hackathon",
-            subtitle: "Finalist",
-            description: "Finalist of Odoo x Mindbend Hackathon (top 50 out of 1200+ teams).",
+            icon: Award,
+            title: "Bajaj HackRX 6.0",
+            subtitle: "Winner - Pitcher Perfect",
+            description: "Winner of the Pitcher Perfect Award at Bajaj HackRX 6.0. Ranked 3 out of 10,000+ participants.",
             gradient: "from-pink-400 via-rose-500 to-red-500",
             bgGradient: "from-pink-500/10 via-rose-500/10 to-red-500/10",
             borderColor: "border-pink-500/30",
             glowColor: "shadow-pink-500/20",
             category: "Hackathon",
             link: {
-                url: "https://drive.google.com/file/d/1Tv77mfnyDxCLAxLtM_BNvXVUsaZCprqR/view?usp=drive_link",
+                url: "#",
+                label: "View Certificate"
+            }
+        },
+        {
+            icon: Award,
+            title: "DTCC India AI Hackathon 2025",
+            subtitle: "Winner",
+            description: "Winner - Academic Institution Team Award at the DTCC India AI Hackathon 2025 for project Investica.",
+            gradient: "from-purple-400 via-indigo-500 to-blue-500",
+            bgGradient: "from-purple-500/10 via-indigo-500/10 to-blue-500/10",
+            borderColor: "border-purple-500/30",
+            glowColor: "shadow-purple-500/20",
+            category: "Hackathon",
+            link: {
+                url: "#",
                 label: "View Certificate"
             }
         },
