@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import line from "@/public/images/top-line.png";
-import github from "@/public/images/github.png";
-import linkedin from "@/public/images/linkedin.png";
-import instagram from "@/public/images/instagram.png";
+import line from "@/public/images/decorations/top-line.png";
+import github from "@/public/images/icons/github.png";
+import linkedin from "@/public/images/icons/linkedin.png";
+import instagram from "@/public/images/icons/instagram.png";
 import { JSX } from "react";
 
 function TopSocial(): JSX.Element {

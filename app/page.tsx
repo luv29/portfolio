@@ -7,7 +7,7 @@ import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Image from "next/image";
-import sq from "@/public/images/sq1.png";
+import sq from "@/public/images/decorations/sq1.png";
 
 function Home(): JSX.Element {
   useEffect(() => {

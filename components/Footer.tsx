@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from "framer-motion";
-import icon from '@/public/images/icon.png';
-import github from "@/public/images/github.png";
-import linkedin from "@/public/images/linkedin.png";
-import instagram from "@/public/images/instagram.png";
+import icon from '@/public/images/decorations/icon.png';
+import github from "@/public/images/icons/github.png";
+import linkedin from "@/public/images/icons/linkedin.png";
+import instagram from "@/public/images/icons/instagram.png";
 import { JSX } from 'react';
 
 const containerVariants = {

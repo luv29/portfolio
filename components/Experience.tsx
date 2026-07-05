@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { JSX } from "react"
-// import iitImage from "@/public/images/iit.png" // Placeholder comment
+import bfhlImage from "@/public/images/experience/bfhl.jpeg"
 
 function Experience(): JSX.Element {
     const experiences = [
@@ -17,12 +17,12 @@ function Experience(): JSX.Element {
                 "Designed and implemented a <b>Master Orchestrator Agent</b> that autonomously investigates production incidents by coordinating <b>4 specialized observability agents</b> (ELK, ClickHouse, Prometheus, and Azure Log Analytics), each integrated via dedicated <b>MCP servers</b> for tool execution.",
                 "Led end-to-end cloud deployment on <b>Azure Kubernetes Service (AKS)</b> with CI/CD using <b>ArgoCD</b>, enabling scalable, reliable, and automated production releases."
             ],
-            image: null // Replace with IIT image import later
+            image: bfhlImage
         }
     ];
 
     return (
-        <div className='w-full flex justify-center py-20 bg-[#282C33] text-white relative overflow-hidden'>
+        <div id="experience" className='w-full flex justify-center py-20 bg-[#282C33] text-white relative overflow-hidden'>
             <div className='w-[90vw] max-w-[1400px] relative z-10'>
                 {/* Header Section */}
                 <motion.div 
@@ -91,11 +91,9 @@ function Experience(): JSX.Element {
                                 {/* Image Section */}
                                 <div className="w-full xl:w-1/2 relative group/image">
                                     <div className="relative overflow-hidden rounded-2xl aspect-video bg-[#1a1f28] border border-gray-700/50 flex items-center justify-center shadow-2xl group-hover/image:border-gray-600 transition-colors duration-300">
-                                        {exp.image ? (
+                                        {exp.image && (
                                             // @ts-ignore
                                             <Image src={exp.image} alt={exp.company} className="object-cover w-full h-full" />
-                                        ) : (
-                                            <span className="text-gray-500 font-mono">/* Space for IIT picture */</span>
                                         )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-pink-500/20 to-red-600/20 opacity-0 group-hover/image:opacity-30 transition-opacity duration-500 rounded-2xl" />
                                     </div>

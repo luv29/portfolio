@@ -1,26 +1,31 @@
 "use client"
 
 import Image from "next/image"
-import qwikaid from "@/public/images/qwikaid.png"
-import lockout from "@/public/images/lockout.png"
-import dns from "@/public/images/dns.png"
-import insted from "@/public/images/insted.png"
-import github from "@/public/images/github.png"
-import www from "@/public/images/www.png"
-import youtube from "@/public/images/youtube.png"
-import { motion } from "framer-motion"
-import sideDots from "@/public/images/side-dots.png"
-import sq from "@/public/images/sq2.png"
-import lsq from "@/public/images/sq3.png"
-import sideDot2 from '@/public/images/side-dot2.png'
-import { JSX } from "react"
+import { useState, JSX } from "react"
+import qwikaid from "@/public/images/projects/qwikaid.png"
+import lockout from "@/public/images/projects/lockout.png"
+import dns from "@/public/images/projects/dns.png"
+import insted from "@/public/images/projects/insted.png"
+import satyaShield from "@/public/images/projects/satya-shield.png"
+import soulbot from "@/public/images/projects/soulbot.png"
+import github from "@/public/images/icons/github.png"
+import www from "@/public/images/icons/www.png"
+import youtube from "@/public/images/icons/youtube.png"
+import { motion, AnimatePresence } from "framer-motion"
+import sideDots from "@/public/images/decorations/side-dots.png"
+import sq from "@/public/images/decorations/sq2.png"
+import lsq from "@/public/images/decorations/sq3.png"
+import sideDot2 from '@/public/images/decorations/side-dot2.png'
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 function Projects(): JSX.Element {
+    const [showAll, setShowAll] = useState(false);
+
     const cards = [
         {
             title: "Satya Shield",
             subtitle: "AI-Powered Misinformation Defense System",
-            image: qwikaid, // Placeholder: Replace with Satya Shield image
+            image: satyaShield,
             gradient: "from-blue-500/20 via-indigo-500/20 to-purple-600/20",
             accentColor: "text-blue-400",
             borderGlow: "border-blue-500/30",
@@ -56,7 +61,7 @@ function Projects(): JSX.Element {
         {
             title: "SoulBot",
             subtitle: "AI-Powered Mental Wellness Platform",
-            image: qwikaid, // Placeholder: Replace with SoulBot image
+            image: soulbot,
             gradient: "from-pink-500/20 via-rose-500/20 to-red-600/20",
             accentColor: "text-pink-400",
             borderGlow: "border-pink-500/30",
@@ -126,6 +131,23 @@ function Projects(): JSX.Element {
         }
     ];
 
+    const handleToggle = () => {
+        if (showAll) {
+            // We are collapsing. Smooth scroll to the top of the Projects section
+            // so the user doesn't get left stranded down the page.
+            const element = document.getElementById('projects');
+            if (element) {
+                window.scrollTo({
+                    top: element.offsetTop - 80, // Account for sticky navbar
+                    behavior: 'smooth'
+                });
+            }
+        }
+        setShowAll(!showAll);
+    };
+
+    const visibleCards = showAll ? cards : cards.slice(0, 3);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -152,11 +174,18 @@ function Projects(): JSX.Element {
                 type: "spring",
                 stiffness: 100
             }
+        },
+        exit: {
+            opacity: 0,
+            scale: 0.8,
+            transition: {
+                duration: 0.5
+            }
         }
     };
 
     return (
-        <div className='w-full flex justify-center py-20 bg-[#282C33] text-white relative overflow-hidden'>
+        <div id="projects" className='w-full flex justify-center py-20 bg-[#282C33] text-white relative overflow-hidden'>
             {/* Background decorative elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/5 via-transparent to-purple-900/5" />
             
@@ -254,140 +283,168 @@ function Projects(): JSX.Element {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    {cards.map((card, index) => {
-                        const isReversed = index % 2 !== 0;
-                        return (
-                            <motion.div
-                                key={index}
-                                variants={cardVariants}
-                                className="group relative"
-                            >
-                                {/* Glow effect */}
-                                <div className={`absolute -inset-1 bg-gradient-to-r ${card.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700`} style={{ willChange: "opacity" }} />
-                                
-                                <div className={`relative w-full flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border ${card.borderGlow} shadow-2xl`}>
+                    <AnimatePresence>
+                        {visibleCards.map((card, index) => {
+                            const isReversed = index % 2 !== 0;
+                            return (
+                                <motion.div
+                                    key={card.title}
+                                    variants={cardVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    layout
+                                    className="group relative"
+                                >
+                                    {/* Glow effect */}
+                                    <div className={`absolute -inset-1 bg-gradient-to-r ${card.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700`} style={{ willChange: "opacity" }} />
                                     
-                                    {/* Content Section */}
-                                    <motion.div
-                                        className="w-full xl:w-1/2 space-y-6"
-                                        initial={{ x: isReversed ? 60 : -60, opacity: 0 }}
-                                        whileInView={{ x: 0, opacity: 1 }}
-                                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <div className="space-y-4">
-                                            <motion.div
-                                                className="flex items-center gap-3"
-                                                whileHover={{ x: 5 }}
-                                                transition={{ type: "spring", stiffness: 300 }}
-                                            >
-                                                <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.gradient.replace(/\/20/g, '')}`} />
-                                                <h4 className="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
-                                                    {card.title}
-                                                </h4>
-                                            </motion.div>
-                                            <h3 className={`text-xl font-semibold ${card.accentColor} font-mono`}>
-                                                {card.subtitle}
-                                            </h3>
-                                        </div>
-
-                                        <div className="space-y-4">
-                                            {card.features.map((feature, idx) => (
-                                                <motion.div
-                                                    key={idx}
-                                                    className="flex items-start gap-3 group/item"
-                                                    initial={{ opacity: 0, x: -20 }}
-                                                    whileInView={{ opacity: 1, x: 0 }}
-                                                    transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
-                                                    viewport={{ once: true }}
-                                                >
-                                                    <div className={`w-1.5 h-1.5 rounded-full ${card.accentColor.replace('text-', 'bg-')} mt-2 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-300`} />
-                                                    <p
-                                                        className="text-gray-300 leading-relaxed group-hover/item:text-white transition-colors duration-300"
-                                                        dangerouslySetInnerHTML={{ __html: feature }}
-                                                    />
-                                                </motion.div>
-                                            ))}
-                                        </div>
-
-                                        <motion.div 
-                                            className="flex flex-wrap gap-4 pt-4"
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.6, delay: 0.8 }}
-                                            viewport={{ once: true }}
-                                        >
-                                            {card.links.map((link, linkIdx) => (
-                                                <motion.a
-                                                    key={linkIdx}
-                                                    href={link.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    whileHover={{ 
-                                                        scale: 1.05,
-                                                        y: -2
-                                                    }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                    className={`group/link relative overflow-hidden bg-gradient-to-r from-[#353B45] to-[#404752] hover:from-[#4A505C] hover:to-[#525865] text-white border border-[#444C56] hover:${card.borderGlow} px-6 py-3 rounded-xl flex items-center gap-3 transition-all duration-300 font-mono`}
-                                                >
-                                                    <div className={`absolute inset-0 bg-gradient-to-r ${card.gradient} opacity-0 group-hover/link:opacity-100 transition-opacity duration-300`} />
-                                                    <Image
-                                                        src={link.icon}
-                                                        alt={`${link.label} Logo`}
-                                                        width={18}
-                                                        height={18}
-                                                        className="invert relative z-10 group-hover/link:scale-110 transition-transform duration-300"
-                                                    />
-                                                    <span className="relative z-10 font-semibold">{link.label}</span>
-                                                </motion.a>
-                                            ))}
-                                        </motion.div>
-                                    </motion.div>
-
-                                    {/* Image Section */}
-                                    <motion.div
-                                        className="w-full xl:w-1/2 relative group/image"
-                                        initial={{ x: isReversed ? -60 : 60, opacity: 0 }}
-                                        whileInView={{ x: 0, opacity: 1 }}
-                                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                                        viewport={{ once: true }}
-                                    >
-                                        <div className="relative overflow-hidden rounded-2xl">
-                                            {/* Image glow effect */}
-                                            <div className={`absolute -inset-0.5 bg-gradient-to-r ${card.gradient.replace(/\/20/g, '/40')} rounded-2xl blur opacity-0 group-hover/image:opacity-100 transition-opacity duration-500`} />
-                                            
-                                            <motion.div
-                                                className="relative"
-                                                whileHover={{ scale: 1.02 }}
-                                                transition={{ duration: 0.4, ease: "easeOut" }}
-                                            >
-                                                <Image
-                                                    src={card.image}
-                                                    alt={`${card.title} image`}
-                                                    className="rounded-2xl border border-gray-700/50 shadow-2xl w-full h-auto group-hover/image:border-gray-600 transition-colors duration-300"
-                                                />
-                                                
-                                                {/* Overlay gradient */}
-                                                <div className={`absolute inset-0 bg-gradient-to-t ${card.gradient} opacity-0 group-hover/image:opacity-30 transition-opacity duration-500 rounded-2xl`} />
-                                            </motion.div>
-                                        </div>
-
-                                        {/* Floating tech badges */}
+                                    <div className={`relative w-full flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border ${card.borderGlow} shadow-2xl`}>
+                                        
+                                        {/* Content Section */}
                                         <motion.div
-                                            className="absolute -top-4 -right-4 px-3 py-1 bg-[#1a1f28] border border-gray-700 rounded-full text-xs text-gray-400 font-mono opacity-0 group-hover/image:opacity-100 transition-all duration-500"
-                                            initial={{ scale: 0, rotate: -15 }}
-                                            whileInView={{ scale: 1, rotate: 0 }}
-                                            transition={{ duration: 0.5, delay: 1 }}
+                                            className="w-full xl:w-1/2 space-y-6"
+                                            initial={{ x: isReversed ? 60 : -60, opacity: 0 }}
+                                            whileInView={{ x: 0, opacity: 1 }}
+                                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                                             viewport={{ once: true }}
                                         >
-                                            Featured
+                                            <div className="space-y-4">
+                                                <motion.div
+                                                    className="flex items-center gap-3"
+                                                    whileHover={{ x: 5 }}
+                                                    transition={{ type: "spring", stiffness: 300 }}
+                                                >
+                                                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.gradient.replace(/\/20/g, '')}`} />
+                                                    <h4 className="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
+                                                        {card.title}
+                                                    </h4>
+                                                </motion.div>
+                                                <h3 className={`text-xl font-semibold ${card.accentColor} font-mono`}>
+                                                    {card.subtitle}
+                                                </h3>
+                                            </div>
+
+                                            <div className="space-y-4">
+                                                {card.features.map((feature, idx) => (
+                                                    <motion.div
+                                                        key={idx}
+                                                        className="flex items-start gap-3 group/item"
+                                                        initial={{ opacity: 0, x: -20 }}
+                                                        whileInView={{ opacity: 1, x: 0 }}
+                                                        transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
+                                                        viewport={{ once: true }}
+                                                    >
+                                                        <div className={`w-1.5 h-1.5 rounded-full ${card.accentColor.replace('text-', 'bg-')} mt-2 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-300`} />
+                                                        <p
+                                                            className="text-gray-300 leading-relaxed group-hover/item:text-white transition-colors duration-300"
+                                                            dangerouslySetInnerHTML={{ __html: feature }}
+                                                        />
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+
+                                            <motion.div 
+                                                className="flex flex-wrap gap-4 pt-4"
+                                                initial={{ opacity: 0, y: 20 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                transition={{ duration: 0.6, delay: 0.8 }}
+                                                viewport={{ once: true }}
+                                            >
+                                                {card.links.map((link, linkIdx) => (
+                                                    <motion.a
+                                                        key={linkIdx}
+                                                        href={link.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        whileHover={{ 
+                                                            scale: 1.05,
+                                                            y: -2
+                                                        }}
+                                                        whileTap={{ scale: 0.95 }}
+                                                        className={`group/link relative overflow-hidden bg-gradient-to-r from-[#353B45] to-[#404752] hover:from-[#4A505C] hover:to-[#525865] text-white border border-[#444C56] hover:${card.borderGlow} px-6 py-3 rounded-xl flex items-center gap-3 transition-all duration-300 font-mono`}
+                                                    >
+                                                        <div className={`absolute inset-0 bg-gradient-to-r ${card.gradient} opacity-0 group-hover/link:opacity-100 transition-opacity duration-300`} />
+                                                        <Image
+                                                            src={link.icon}
+                                                            alt={`${link.label} Logo`}
+                                                            width={18}
+                                                            height={18}
+                                                            className="invert relative z-10 group-hover/link:scale-110 transition-transform duration-300"
+                                                        />
+                                                        <span className="relative z-10 font-semibold">{link.label}</span>
+                                                    </motion.a>
+                                                ))}
+                                            </motion.div>
                                         </motion.div>
-                                    </motion.div>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
+
+                                        {/* Image Section */}
+                                        <motion.div
+                                            className="w-full xl:w-1/2 relative group/image"
+                                            initial={{ x: isReversed ? -60 : 60, opacity: 0 }}
+                                            whileInView={{ x: 0, opacity: 1 }}
+                                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                                            viewport={{ once: true }}
+                                        >
+                                            <div className="relative overflow-hidden rounded-2xl">
+                                                {/* Image glow effect */}
+                                                <div className={`absolute -inset-0.5 bg-gradient-to-r ${card.gradient.replace(/\/20/g, '/40')} rounded-2xl blur opacity-0 group-hover/image:opacity-100 transition-opacity duration-500`} />
+                                                
+                                                <motion.div
+                                                    className="relative"
+                                                    whileHover={{ scale: 1.02 }}
+                                                    transition={{ duration: 0.4, ease: "easeOut" }}
+                                                >
+                                                    <Image
+                                                        src={card.image}
+                                                        alt={`${card.title} image`}
+                                                        className="rounded-2xl border border-gray-700/50 shadow-2xl w-full h-auto group-hover/image:border-gray-600 transition-colors duration-300"
+                                                    />
+                                                    
+                                                    {/* Overlay gradient */}
+                                                    <div className={`absolute inset-0 bg-gradient-to-t ${card.gradient} opacity-0 group-hover/image:opacity-30 transition-opacity duration-500 rounded-2xl`} />
+                                                </motion.div>
+                                            </div>
+
+                                            {/* Floating tech badges */}
+                                            <motion.div
+                                                className="absolute -top-4 -right-4 px-3 py-1 bg-[#1a1f28] border border-gray-700 rounded-full text-xs text-gray-400 font-mono opacity-0 group-hover/image:opacity-100 transition-all duration-500"
+                                                initial={{ scale: 0, rotate: -15 }}
+                                                whileInView={{ scale: 1, rotate: 0 }}
+                                                transition={{ duration: 0.5, delay: 1 }}
+                                                viewport={{ once: true }}
+                                            >
+                                                Featured
+                                            </motion.div>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </AnimatePresence>
                 </motion.div>
+                
+                {/* View More Button */}
+                <div className="mt-24 flex justify-center">
+                    <motion.button
+                        onClick={handleToggle}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group relative overflow-hidden px-8 py-4 rounded-full bg-gradient-to-r from-[#2F343F] to-[#252A35] border border-cyan-500/30 hover:border-cyan-500/60 shadow-[0_0_20px_rgba(6,182,212,0.1)] hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-500 flex items-center gap-3"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <span className="relative z-10 font-bold font-mono text-cyan-400 tracking-wider">
+                            {showAll ? "VIEW LESS" : "VIEW ALL"}
+                        </span>
+                        <motion.div
+                            animate={{ y: showAll ? -2 : 2 }}
+                            transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                            className="relative z-10 text-cyan-400"
+                        >
+                            {showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                        </motion.div>
+                    </motion.button>
+                </div>
             </div>
         </div>
     );

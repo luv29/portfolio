@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import hero from "@/public/images/image.png";
-import iv from "@/public/images/inverted-comma.png";
+import hero from "@/public/images/profile/image.png";
+import iv from "@/public/images/decorations/inverted-comma.png";
 import { JSX } from "react";
 
 function HeroSection(): JSX.Element {

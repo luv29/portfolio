@@ -4,13 +4,14 @@ import { useState, useEffect, JSX } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Code, Home, FolderOpen, Award, Mail, Zap, ExternalLink } from 'lucide-react';
-import icon from '@/public/images/icon.png';
+import { Menu, X, Code, Home, FolderOpen, Award, Mail, Zap, ExternalLink, Briefcase } from 'lucide-react';
+import icon from '@/public/images/decorations/icon.png';
 
 function NavBar(): JSX.Element {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -18,13 +19,35 @@ function NavBar(): JSX.Element {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  // Track active section on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px' }
+    );
+
+    const sections = ['hero', 'experience', 'projects', 'skills', 'achievements', 'contact'];
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const navItems = [
     { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
+    { name: 'Experience', href: '/#experience', icon: <Briefcase className="w-4 h-4" /> },
     { name: 'Projects', href: '/#projects', icon: <FolderOpen className="w-4 h-4" /> },
     { name: 'Skills', href: '/#skills', icon: <Code className="w-4 h-4" /> },
     { name: 'Achievements', href: '/#achievements', icon: <Award className="w-4 h-4" /> },
@@ -57,8 +80,8 @@ function NavBar(): JSX.Element {
   };
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    if (href.startsWith('/#')) return false; // Hash links should not show as active
+    if (href === '/') return activeSection === 'hero';
+    if (href.startsWith('/#')) return activeSection === href.substring(2);
     return pathname === href;
   };
 
