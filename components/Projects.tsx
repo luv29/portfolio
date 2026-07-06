@@ -300,11 +300,18 @@ function Projects(): JSX.Element {
                                     {/* Glow effect */}
                                     <div className={`absolute -inset-1 bg-gradient-to-r ${card.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700`} style={{ willChange: "opacity" }} />
                                     
-                                    <div className={`relative w-full flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border ${card.borderGlow} shadow-2xl`}>
+                                    <div className={`relative w-full flex flex-col xl:flex-row ${isReversed ? "xl:flex-row-reverse" : ""} items-center gap-12 bg-gradient-to-br from-[#2F343F] via-[#2A2F3A] to-[#252A35] p-10 rounded-3xl border ${card.borderGlow} shadow-2xl overflow-hidden`}>
+                                        
+                                        {/* Giant Watermark Number */}
+                                        <div className={`absolute top-1/2 -translate-y-1/2 ${isReversed ? '-left-10 md:left-0' : '-right-10 md:right-0'} select-none pointer-events-none z-0`}>
+                                            <span className={`text-[200px] md:text-[350px] font-black tracking-tighter bg-gradient-to-b ${card.gradient.replace(/\/20/g, '/5')} bg-clip-text text-transparent`}>
+                                                0{index + 1}
+                                            </span>
+                                        </div>
                                         
                                         {/* Content Section */}
                                         <motion.div
-                                            className="w-full xl:w-1/2 space-y-6"
+                                            className="w-full xl:w-1/2 space-y-6 relative z-10"
                                             initial={{ x: isReversed ? 60 : -60, opacity: 0 }}
                                             whileInView={{ x: 0, opacity: 1 }}
                                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
@@ -312,12 +319,17 @@ function Projects(): JSX.Element {
                                         >
                                             <div className="space-y-4">
                                                 <motion.div
-                                                    className="flex items-center gap-3"
+                                                    className="flex items-center gap-5"
                                                     whileHover={{ x: 5 }}
                                                     transition={{ type: "spring", stiffness: 300 }}
                                                 >
-                                                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.gradient.replace(/\/20/g, '')}`} />
-                                                    <h4 className="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
+                                                    <div className={`flex items-center justify-center w-14 h-14 rounded-2xl bg-[#1a1f28] border ${card.borderGlow} shadow-[0_0_15px_rgba(0,0,0,0.5)] shrink-0 relative overflow-hidden group/badge`}>
+                                                        <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-20 group-hover/badge:opacity-40 transition-opacity duration-300`} />
+                                                        <span className={`font-mono font-bold text-2xl ${card.accentColor} relative z-10`}>
+                                                            0{index + 1}
+                                                        </span>
+                                                    </div>
+                                                    <h4 className="text-3xl md:text-4xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all duration-500">
                                                         {card.title}
                                                     </h4>
                                                 </motion.div>
@@ -381,7 +393,7 @@ function Projects(): JSX.Element {
 
                                         {/* Image Section */}
                                         <motion.div
-                                            className="w-full xl:w-1/2 relative group/image"
+                                            className="w-full xl:w-1/2 relative group/image z-10"
                                             initial={{ x: isReversed ? -60 : 60, opacity: 0 }}
                                             whileInView={{ x: 0, opacity: 1 }}
                                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -435,7 +447,7 @@ function Projects(): JSX.Element {
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <span className="relative z-10 font-bold font-mono text-cyan-400 tracking-wider">
-                            {showAll ? "VIEW LESS" : "VIEW ALL"}
+                            {showAll ? "VIEW LESS" : "VIEW ALL (6)"}
                         </span>
                         <motion.div
                             animate={{ y: showAll ? -2 : 2 }}
