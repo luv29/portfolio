@@ -37,9 +37,9 @@ function Home(): JSX.Element {
 
       <section id="hero"><HeroSection /></section>
       <section id="experience"><Experience /></section>
+      <section id="achievements"><Achievements /></section>
       <section id="projects"><Projects /></section>
       <section id="skills"><Skills /></section>
-      <section id="achievements"><Achievements /></section>
       <section id="contact"><Contact /></section>
     </div>
   );

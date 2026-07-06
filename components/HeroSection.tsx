@@ -12,7 +12,7 @@ function HeroSection(): JSX.Element {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-[90vw] max-w-[1200px] mx-auto min-h-screen md:min-h-[80vh] flex flex-col justify-center items-center gap-16 px-4"
+            className="w-[90vw] max-w-[1200px] mx-auto min-h-screen md:min-h-[80vh] flex flex-col justify-center items-center gap-16 px-4 py-20"
         >
             <div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12">
                 <motion.div

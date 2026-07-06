@@ -197,8 +197,8 @@ export default function Skills(): JSX.Element {
             <div className="relative max-w-7xl mx-auto">
                 <div className="text-center mb-20">
                     <div className="inline-block">
-                        <h2 className="text-6xl md:text-7xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text mb-4 tracking-tight">
-                            <span className="text-purple-400">#</span> My Skills
+                        <h2 className="text-6xl md:text-7xl font-black text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text mb-4 tracking-tight">
+                            <span className="text-yellow-400">#</span> My Skills
                         </h2>
                         <div className="h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent rounded-full animate-pulse" />
                     </div>

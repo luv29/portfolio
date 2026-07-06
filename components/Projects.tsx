@@ -264,8 +264,9 @@ function Projects(): JSX.Element {
                             // Featured Projects
                         </span>
                     </motion.div>
+
                     <h2 className='text-6xl md:text-7xl font-bold mb-6 text-white'>
-                        <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
                             My Projects
                         </span>
                     </h2>

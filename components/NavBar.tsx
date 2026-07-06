@@ -36,7 +36,7 @@ function NavBar(): JSX.Element {
       { rootMargin: '-50% 0px -50% 0px' }
     );
 
-    const sections = ['hero', 'experience', 'projects', 'skills', 'achievements', 'contact'];
+    const sections = ['hero', 'experience', 'achievements', 'projects', 'skills', 'contact'];
     sections.forEach((section) => {
       const element = document.getElementById(section);
       if (element) observer.observe(element);
@@ -48,9 +48,9 @@ function NavBar(): JSX.Element {
   const navItems = [
     { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
     { name: 'Experience', href: '/#experience', icon: <Briefcase className="w-4 h-4" /> },
+    { name: 'Achievements', href: '/#achievements', icon: <Award className="w-4 h-4" /> },
     { name: 'Projects', href: '/#projects', icon: <FolderOpen className="w-4 h-4" /> },
     { name: 'Skills', href: '/#skills', icon: <Code className="w-4 h-4" /> },
-    { name: 'Achievements', href: '/#achievements', icon: <Award className="w-4 h-4" /> },
     { name: 'Contact', href: '/#contact', icon: <Mail className="w-4 h-4" /> },
     { name: 'Links', href: '/link-tree', icon: <ExternalLink className="w-4 h-4" /> },
   ];

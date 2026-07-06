@@ -50,7 +50,9 @@ const Contact: React.FC = () => {
           <div className="w-32 h-px bg-orange-400"></div>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Let's work <span className="text-orange-400">together</span>
+          <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+            Let's work together
+          </span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto text-lg">
           Have a project in mind or just want to chat? I'm always open to discussing new opportunities and interesting ideas.
