@@ -17,7 +17,7 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-blue-500/20",
             category: "Competitive Programming",
             link: {
-                url: "#",
+                url: "https://drive.google.com/file/d/1ivlzpnp-NfnYrvcbyxwiEJEWPO7RlEb8/view?usp=sharing",
                 label: "View Certificate"
             }
         },
@@ -92,8 +92,8 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-red-500/20",
             category: "Competition",
             link: {
-                url: "https://drive.google.com/file/d/1n-XVrTzf59fsXAh6sKXvtXbTrP5jH8RK/view?usp=drive_link",
-                label: "View Badge"
+                url: "https://drive.google.com/file/d/1ftX8XoEhhCvvvVlbzy21x6aNxZ2Tipvo/view?usp=sharing",
+                label: "View Certificate"
             }
         },
         {
@@ -107,7 +107,7 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-pink-500/20",
             category: "Hackathon",
             link: {
-                url: "#",
+                url: "https://drive.google.com/file/d/177V_RN2n8jNh6I3LOLi7EzMnv03_5LIF/view?usp=sharing",
                 label: "View Certificate"
             }
         },
@@ -122,7 +122,7 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-purple-500/20",
             category: "Hackathon",
             link: {
-                url: "#",
+                url: "https://drive.google.com/file/d/1cCYXs4RtL-pCmEf31XMzItwV_YJEKz57/view?usp=sharing",
                 label: "View Certificate"
             }
         },
@@ -137,7 +137,7 @@ function Achievements(): JSX.Element {
             glowColor: "shadow-cyan-500/20",
             category: "Academic",
             link: {
-                url: "#",
+                url: "https://drive.google.com/file/d/1-GD4KYoTtz6LX2jWfNzFXOyY6gS0tcs2/view?usp=sharing",
                 label: "View Scorecard"
             }
         }
@@ -247,35 +247,7 @@ function Achievements(): JSX.Element {
                     </p>
                 </motion.div>
 
-                {/* Stats Overview */}
-                <motion.div
-                    className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    viewport={{ once: true }}
-                >
-                    {[
-                        { label: "Contest Ranks", value: "Top 5%" },
-                        { label: "Global Rating", value: "2000+" },
-                        { label: "Competitions", value: "8+" },
-                        { label: "JEE Advance AIR", value: "9960" }
-                    ].map((stat, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-gradient-to-br from-[#2F343F] to-[#252A35] p-6 rounded-2xl border border-gray-700/30 text-center group hover:border-yellow-500/30 transition-all duration-300"
-                            whileHover={{ scale: 1.05, y: -5 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <div className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                                {stat.value}
-                            </div>
-                            <div className="text-sm text-gray-400 font-mono">
-                                {stat.label}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+
 
                 {/* Achievements Grid */}
                 <motion.div 

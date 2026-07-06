@@ -17,7 +17,11 @@ function Experience(): JSX.Element {
                 "Designed and implemented a <b>Master Orchestrator Agent</b> that autonomously investigates production incidents by coordinating <b>4 specialized observability agents</b> (ELK, ClickHouse, Prometheus, and Azure Log Analytics), each integrated via dedicated <b>MCP servers</b> for tool execution.",
                 "Led end-to-end cloud deployment on <b>Azure Kubernetes Service (AKS)</b> with CI/CD using <b>ArgoCD</b>, enabling scalable, reliable, and automated production releases."
             ],
-            image: bfhlImage
+            image: bfhlImage,
+            link: {
+                url: "https://drive.google.com/file/d/1w16JCn4HkDM27gbLLpZCqL3IrOz_VSkW/view",
+                label: "View Internship Letter"
+            }
         }
     ];
 
@@ -86,6 +90,21 @@ function Experience(): JSX.Element {
                                             </div>
                                         ))}
                                     </div>
+
+                                    {/* Action Button */}
+                                    {exp.link && (
+                                        <motion.a
+                                            href={exp.link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-white font-semibold rounded-xl hover:bg-purple-500/30 transition-all duration-300 group/btn"
+                                            whileHover={{ scale: 1.05, y: -2 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            <span>{exp.link.label}</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:translate-x-1 transition-transform duration-200"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                        </motion.a>
+                                    )}
                                 </div>
 
                                 {/* Image Section */}

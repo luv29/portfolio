@@ -59,15 +59,6 @@ export default function LinkTreePage() {
       url: "https://drive.google.com/file/d/1Tv77mfnyDxCLAxLtM_BNvXVUsaZCprqR/view?usp=drive_link"
     },
     {
-      title: 'GDG - Top 105 Teams Shortlisted',
-      icon: <Award className="w-5 h-5" />,
-      type: 'Competition',
-      color: 'from-green-500 to-green-600',
-      year: '2024',
-      description: 'Shortlisted among top 105 teams in Google Developer Groups',
-      url: "https://drive.google.com/file/d/1n-XVrTzf59fsXAh6sKXvtXbTrP5jH8RK/view?usp=drive_link"
-    },
-    {
       title: 'Machine Learning Specialization Course',
       icon: <Award className="w-5 h-5" />,
       type: 'Certification',
@@ -75,6 +66,60 @@ export default function LinkTreePage() {
       year: '2024',
       description: 'Completed comprehensive ML specialization program',
       url: "https://drive.google.com/file/d/1iQSHacI_DNs5yrF_NOnJ3tLyUsLp7X3n/view?usp=drive_link"
+    },
+    {
+      title: 'GDG Solution Challenge - Finalist',
+      icon: <Award className="w-5 h-5" />,
+      type: 'Competition',
+      color: 'from-green-500 to-green-600',
+      year: '2024',
+      description: 'Invited to the Google office for the finals; ranked top 14',
+      url: "https://drive.google.com/file/d/1ftX8XoEhhCvvvVlbzy21x6aNxZ2Tipvo/view?usp=sharing"
+    },
+    {
+      title: 'JEE Advanced & Mains',
+      icon: <Award className="w-5 h-5" />,
+      type: 'Academic',
+      color: 'from-cyan-500 to-cyan-600',
+      year: '2022',
+      description: 'Secured AIR 9960 in JEE Advanced and 98.6%ile in JEE Mains',
+      url: "https://drive.google.com/file/d/1-GD4KYoTtz6LX2jWfNzFXOyY6gS0tcs2/view?usp=sharing"
+    },
+    {
+      title: 'Bajaj HackRX 6.0 - Winner',
+      icon: <Trophy className="w-5 h-5" />,
+      type: 'Hackathon',
+      color: 'from-pink-500 to-pink-600',
+      year: '2025',
+      description: 'Winner of the Pitcher Perfect Award',
+      url: "https://drive.google.com/file/d/177V_RN2n8jNh6I3LOLi7EzMnv03_5LIF/view?usp=sharing"
+    },
+    {
+      title: 'ICPC Kanpur Regionalist',
+      icon: <Trophy className="w-5 h-5" />,
+      type: 'Competitive Programming',
+      color: 'from-blue-500 to-blue-600',
+      year: '2025',
+      description: 'Secured Rank 48 at ICPC Kanpur Regionals',
+      url: "https://drive.google.com/file/d/1ivlzpnp-NfnYrvcbyxwiEJEWPO7RlEb8/view?usp=sharing"
+    },
+    {
+      title: 'DTCC India AI Hackathon - Winner',
+      icon: <Trophy className="w-5 h-5" />,
+      type: 'Hackathon',
+      color: 'from-purple-500 to-purple-600',
+      year: '2025',
+      description: 'Academic Institution Team Award for Investica',
+      url: "https://drive.google.com/file/d/1cCYXs4RtL-pCmEf31XMzItwV_YJEKz57/view?usp=sharing"
+    },
+    {
+      title: 'Bajaj Finserv Health - SDE Internship',
+      icon: <Award className="w-5 h-5" />,
+      type: 'Experience',
+      color: 'from-red-500 to-orange-500',
+      year: '2026',
+      description: 'Software Development Engineer Internship Offer Letter',
+      url: "https://drive.google.com/file/d/1w16JCn4HkDM27gbLLpZCqL3IrOz_VSkW/view"
     }
   ];
 
